@@ -6,3 +6,4 @@ instance/
 data/*.db
 .DS_Store
 .venv/
+PRESENTATION.md
