@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    container_name: wad-project-web
+    ports:
+      - "5000:5000"
+    environment:
+      SECRET_KEY: "change-this-secret-in-production"
+      DATABASE_PATH: "/app/data/wad_project.db"
+    volumes:
+      - wad_project_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  wad_project_data:

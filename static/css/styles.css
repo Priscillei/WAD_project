@@ -1,0 +1,153 @@
+:root {
+    --app-bg: #f5f7fb;
+    --app-surface: #ffffff;
+    --app-text: #172033;
+    --app-muted: #667085;
+    --app-gradient: linear-gradient(135deg, #e8f0ff 0%, #f8e9ff 100%);
+    --app-border: rgba(23, 32, 51, 0.08);
+}
+
+html[data-bs-theme="dark"] {
+    --app-bg: #111827;
+    --app-surface: #182235;
+    --app-text: #eef2ff;
+    --app-muted: #b7c0d8;
+    --app-gradient: linear-gradient(135deg, #172554 0%, #3b0764 100%);
+    --app-border: rgba(255, 255, 255, 0.12);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--app-bg);
+    color: var(--app-text);
+}
+
+main {
+    flex: 1;
+}
+
+.app-navbar,
+footer {
+    background: color-mix(in srgb, var(--app-surface) 90%, transparent);
+    backdrop-filter: blur(12px);
+}
+
+.card,
+.modal-content,
+.form-control,
+.form-select {
+    border-color: var(--app-border);
+}
+
+.card,
+.modal-content {
+    background: var(--app-surface);
+}
+
+.hero-card {
+    background: var(--app-gradient);
+    border: 1px solid var(--app-border);
+}
+
+.eyebrow {
+    color: var(--bs-primary);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.auth-wrapper {
+    min-height: calc(100vh - 210px);
+}
+
+.auth-card {
+    border-radius: 1.25rem;
+}
+
+.brand-mark,
+.empty-icon {
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 1rem;
+    background: var(--bs-primary);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.stat-card {
+    padding: 1rem;
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--app-surface) 84%, transparent);
+    border: 1px solid var(--app-border);
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 1.65rem;
+    line-height: 1;
+}
+
+.stat-card span {
+    color: var(--app-muted);
+    font-size: 0.8rem;
+}
+
+.task-title {
+    font-weight: 700;
+}
+
+.task-description {
+    max-width: 34rem;
+    color: var(--app-muted);
+    font-size: 0.9rem;
+}
+
+.badge-soft {
+    border: 1px solid var(--app-border);
+    background: color-mix(in srgb, var(--app-surface) 70%, transparent);
+    color: var(--app-text);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.empty-state .empty-icon {
+    margin: 0 auto 1rem;
+    background: color-mix(in srgb, var(--bs-primary) 80%, #ffffff);
+}
+
+.table > :not(caption) > * > * {
+    padding: 1rem;
+}
+
+.btn-icon-group {
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .hero-card {
+        padding: 1.5rem !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .table {
+        min-width: 760px;
+    }
+}
